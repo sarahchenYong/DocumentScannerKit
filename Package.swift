@@ -1,30 +1,18 @@
 // swift-tools-version: 5.9
-//
-//  DocumentScannerKit — a plug-and-play document/ID/cheque scanner for Apple
-//  platforms. Add the package, present one view, get a fully-parsed
-//  `ScannedDocument` back.
-//
 
 import PackageDescription
 
 let package = Package(
     name: "DocumentScannerKit",
-    platforms: [
-        .iOS(.v16),
-        .macOS(.v12),   // parsing + Vision OCR run on macOS; live camera is iOS-only
-    ],
+    platforms: [.iOS(.v16)],
     products: [
-        .library(name: "DocumentScannerKit", targets: ["DocumentScannerKit"]),
+        .library(name: "DocumentScannerKit", targets: ["ScannerKitIntegration", "ScannerKit", "DocumentScannerKit", "IDScanner"])
     ],
     targets: [
-        .target(
-            name: "DocumentScannerKit",
-            path: "Sources/DocumentScannerKit"
-        ),
-        .testTarget(
-            name: "DocumentScannerKitTests",
-            dependencies: ["DocumentScannerKit"],
-            path: "Tests/DocumentScannerKitTests"
-        ),
+        .target(name: "ScannerKitIntegration", dependencies: ["ScannerKit", "DocumentScannerKit", "IDScanner"], path: "Sources/ScannerKitIntegration"),
+        .testTarget(name: "ScannerKitIntegrationTests", dependencies: ["ScannerKitIntegration"], path: "Tests/ScannerKitIntegrationTests"),
+        .binaryTarget(name: "ScannerKit", path: "Frameworks/ScannerKit.xcframework"),
+        .binaryTarget(name: "DocumentScannerKit", path: "Frameworks/DocumentScannerKit.xcframework"),
+        .binaryTarget(name: "IDScanner", path: "Frameworks/IDScanner.xcframework")
     ]
 )

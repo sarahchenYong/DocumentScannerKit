@@ -15,9 +15,10 @@ one view, and get a fully-parsed `ScannedDocument` back — the SDK identifies
 | **Business card** | Printed office address |
 | **Address note** | Labelled, multi-line printed or handwritten address |
 
-Detection and extraction are powered entirely by on-device **Vision** OCR + an
-**ICAO 9303** MRZ parser with check-digit validation — no network, no third-party
-dependencies, nothing leaves the device.
+Detection and extraction are powered entirely by the protected on-device
+frameworks. The scanner implementation, OCR, MRZ parsing, classification and
+license enforcement are distributed as XCFramework binaries; only the public
+integration layer is included as Swift source.
 
 ## Installation
 
@@ -36,8 +37,8 @@ Then add to your app target's **Info.plist**:
 NSCameraUsageDescription = "We use the camera to scan documents."
 ```
 
-> Requires iOS 16+. The parsing core also builds on macOS 12+ (handy for tests
-> and server-side image parsing); the live-camera UI is iOS-only.
+> Requires iOS 16+. The package includes device and simulator XCFramework
+> slices. The protected implementation is not distributed as Swift source.
 
 ## Two modes: auto vs manual
 

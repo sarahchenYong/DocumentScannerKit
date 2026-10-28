@@ -1,0 +1,54 @@
+name: ScannerKitBinary
+options:
+  deploymentTarget:
+    iOS: "16.0"
+packages:
+  MRZParser:
+    url: https://github.com/romanmazeev/MRZParser.git
+    version: 1.4.3
+  MRZScanner:
+    url: https://github.com/romanmazeev/MRZScanner.git
+    version: 1.1.6
+targets:
+  DocumentScannerKit:
+    type: framework
+    platform: iOS
+    sources:
+      - path: ../Sources/DocumentScannerKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.byvyomi.scannerkit.documentscannerkit
+        SWIFT_VERSION: 5.9
+        GENERATE_INFOPLIST_FILE: YES
+        BUILD_LIBRARY_FOR_DISTRIBUTION: NO
+  IDScanner:
+    type: framework
+    platform: iOS
+    sources:
+      - path: ../Sources/IDScanner
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.byvyomi.scannerkit.idscanner
+        SWIFT_VERSION: 5.9
+        GENERATE_INFOPLIST_FILE: YES
+        BUILD_LIBRARY_FOR_DISTRIBUTION: NO
+    dependencies:
+      - target: DocumentScannerKit
+      - package: MRZParser
+        product: MRZParser
+      - package: MRZScanner
+        product: MRZScanner
+  ScannerKit:
+    type: framework
+    platform: iOS
+    sources:
+      - path: ../Sources/ScannerKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.byvyomi.scannerkit
+        SWIFT_VERSION: 5.9
+        GENERATE_INFOPLIST_FILE: YES
+        BUILD_LIBRARY_FOR_DISTRIBUTION: NO
+    dependencies:
+      - target: DocumentScannerKit
+      - target: IDScanner
