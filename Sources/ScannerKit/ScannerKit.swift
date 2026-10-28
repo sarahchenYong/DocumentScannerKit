@@ -127,7 +127,6 @@ public enum ScannerKit {
         }
 
         self.configuration = configuration
-        IDScanner.usesDocumentScannerKitParser = !configuration.usesMRZFallback
     }
 
     /// Validates the configured key against your licensing backend. Call this

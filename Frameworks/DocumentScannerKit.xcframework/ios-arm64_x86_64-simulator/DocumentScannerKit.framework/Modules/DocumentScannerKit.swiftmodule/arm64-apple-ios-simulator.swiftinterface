@@ -1,0 +1,527 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios16.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name DocumentScannerKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
+import AVFoundation
+import CoreGraphics
+import CoreImage
+import Foundation
+import ImageIO
+import PDFKit
+import PhotosUI
+import Swift
+import SwiftUI
+import UIKit
+import UniformTypeIdentifiers
+import Vision
+import VisionKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct ChequeResult : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public var payee: Swift.String?
+  public var accountHolder: Swift.String?
+  public var bank: Swift.String?
+  public var branch: Swift.String?
+  public var accountNumber: Swift.String?
+  public var chequeNumber: Swift.String?
+  public var iban: Swift.String?
+  public var amountInWords: Swift.String?
+  public var amountInFigures: Swift.String?
+  public var amountValue: Foundation.Decimal?
+  public var currency: Swift.String?
+  public var date: Swift.String?
+  public var micr: Swift.String?
+  public func scannedFields() -> [DocumentScannerKit.ScannedField]
+  public var hasContent: Swift.Bool {
+    get
+  }
+  public static func == (a: DocumentScannerKit.ChequeResult, b: DocumentScannerKit.ChequeResult) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ChequeParser {
+  public static func micrLine(in lines: [Swift.String]) -> Swift.String?
+  public static func parse(_ lines: [Swift.String]) -> DocumentScannerKit.ChequeResult?
+}
+public struct DocumentClassification : Swift.Sendable {
+  public let kind: DocumentScannerKit.DocumentKind
+  public let confidence: Swift.Double
+  public let reasons: [Swift.String]
+}
+public enum DocumentClassifier {
+  public static let bankNames: [Swift.String]
+  public static func matchedBankName(in text: Swift.String) -> Swift.String?
+  public static func classify(lines: [Swift.String], mrz: DocumentScannerKit.MRZResult?) -> DocumentScannerKit.DocumentClassification
+}
+public enum DocumentSide : Swift.String, Swift.Codable, Swift.Sendable {
+  case front
+  case back
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DocumentKind : Swift.String, Swift.Codable, Swift.Sendable, Swift.CaseIterable {
+  case passportFront
+  case passportBack
+  case visa
+  case emiratesIDFront
+  case emiratesIDBack
+  case nationalID
+  case drivingLicense
+  case residencePermit
+  case bankCheque
+  case tradeLicense
+  case utilityBill
+  case businessCard
+  case addressNote
+  case unknown
+  public var symbolName: Swift.String {
+    get
+  }
+  public var side: DocumentScannerKit.DocumentSide {
+    get
+  }
+  public var isTravelDocument: Swift.Bool {
+    get
+  }
+  public init?(slotName: Swift.String)
+  public func isCaptureCompatible(with expected: DocumentScannerKit.DocumentKind) -> Swift.Bool
+  public var guideAspectRatio: Swift.Double {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [DocumentScannerKit.DocumentKind]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [DocumentScannerKit.DocumentKind] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DocumentParser {
+  public static func parse(recognizedLines lines: [Swift.String], expecting expectedType: DocumentScannerKit.DocumentKind? = nil) -> DocumentScannerKit.ScannedDocument
+  public static func parse(image: CoreGraphics.CGImage, orientation: ImageIO.CGImagePropertyOrientation = .up, expecting expectedType: DocumentScannerKit.DocumentKind? = nil) throws -> DocumentScannerKit.ScannedDocument
+}
+public enum DocumentReader {
+  public typealias Page = (cgImage: CoreGraphics.CGImage, orientation: ImageIO.CGImagePropertyOrientation)
+  public static func pageImages(image: UIKit.UIImage? = nil, pdfFilePath: Foundation.URL? = nil, pageLimit: Swift.Int = 1) -> [DocumentScannerKit.DocumentReader.Page]
+  public static func readValue(image: UIKit.UIImage? = nil, pdfFilePath: Foundation.URL? = nil, request: DocumentScannerKit.DocumentValueRequest, completion: @escaping (Swift.String?) -> Swift.Void)
+  public static func readIBAN(image: UIKit.UIImage? = nil, pdfFilePath: Foundation.URL? = nil, completion: @escaping (Swift.String?) -> Swift.Void)
+}
+public struct CapturedDocument {
+  public let image: UIKit.UIImage
+  public let kind: DocumentScannerKit.DocumentKind?
+  public let detectedKind: DocumentScannerKit.DocumentKind?
+}
+@_Concurrency.MainActor public enum DocumentScanner {
+  @_Concurrency.MainActor public static func presentPaper(from presenter: UIKit.UIViewController, recognizesText: Swift.Bool = true, completion: @escaping (Swift.Result<DocumentScannerKit.ScannedPaperDocument, any Swift.Error>) -> Swift.Void)
+  @_Concurrency.MainActor public static func present(from presenter: UIKit.UIViewController, configuration: DocumentScannerKit.ScannerConfiguration = .default, onCapturedImage: ((UIKit.UIImage) -> Swift.Void)? = nil, completion: @escaping (DocumentScannerKit.ScannedDocument?) -> Swift.Void)
+  @_Concurrency.MainActor public static func presentCapture(from presenter: UIKit.UIViewController, expecting: DocumentScannerKit.DocumentKind? = nil, guideAspectRatio: Swift.Double = 1.5, instructionText: Swift.String? = nil, completion: @escaping (DocumentScannerKit.CapturedDocument?) -> Swift.Void)
+  @_Concurrency.MainActor public static func presentValueScan(from presenter: UIKit.UIViewController, request: DocumentScannerKit.DocumentValueRequest, completion: @escaping (DocumentScannerKit.ValueScanOutcome) -> Swift.Void)
+  @_Concurrency.MainActor public static func presentIBANScan(from presenter: UIKit.UIViewController, completion: @escaping (DocumentScannerKit.ValueScanOutcome) -> Swift.Void)
+  @_Concurrency.MainActor public static func present(from presenter: UIKit.UIViewController, mode: DocumentScannerKit.ScanMode, completion: @escaping (DocumentScannerKit.ScannedDocument?) -> Swift.Void)
+  @_Concurrency.MainActor public static func scan(from presenter: UIKit.UIViewController, configuration: DocumentScannerKit.ScannerConfiguration = .default) async -> DocumentScannerKit.ScannedDocument?
+  @_Concurrency.MainActor public static func scan(from presenter: UIKit.UIViewController, mode: DocumentScannerKit.ScanMode) async -> DocumentScannerKit.ScannedDocument?
+}
+@_Concurrency.MainActor @preconcurrency public struct DocumentScannerView : SwiftUI.UIViewControllerRepresentable {
+  @_Concurrency.MainActor @preconcurrency public init(configuration: DocumentScannerKit.ScannerConfiguration = .default, onResult: @escaping (DocumentScannerKit.ScannedDocument) -> Swift.Void, onCapturedImage: ((UIKit.UIImage) -> Swift.Void)? = nil, onCancel: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public init(mode: DocumentScannerKit.ScanMode, onResult: @escaping (DocumentScannerKit.ScannedDocument) -> Swift.Void, onCapturedImage: ((UIKit.UIImage) -> Swift.Void)? = nil, onCancel: (() -> Swift.Void)? = nil)
+  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: DocumentScannerKit.DocumentScannerView.Context) -> DocumentScannerKit.DocumentScannerViewController
+  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ vc: DocumentScannerKit.DocumentScannerViewController, context: DocumentScannerKit.DocumentScannerView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewControllerType = DocumentScannerKit.DocumentScannerViewController
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency final public class DocumentScannerViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency final public var onResult: ((DocumentScannerKit.ScannedDocument) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency final public var onCapturedImage: ((UIKit.UIImage) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency final public var onCaptureOnlyResult: ((DocumentScannerKit.CapturedDocument) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency final public var onCancel: (() -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public init(configuration: DocumentScannerKit.ScannerConfiguration = .default)
+  @_Concurrency.MainActor @preconcurrency @objc override final public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLayoutSubviews()
+  @objc deinit
+  @_Concurrency.MainActor @preconcurrency final public func capture()
+}
+extension DocumentScannerKit.DocumentScannerViewController : AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+}
+@objc @_Concurrency.MainActor final public class DocumentSourceMenu : ObjectiveC.NSObject {
+  public struct Appearance {
+    public var menuTitle: Swift.String
+    public var scan: Swift.String
+    public var document: Swift.String
+    public var photoLibrary: Swift.String
+    public var reading: Swift.String
+    public init(menuTitle: Swift.String = "Select Option", scan: Swift.String = "Scan", document: Swift.String = "Document (PDF)", photoLibrary: Swift.String = "Photo Library", reading: Swift.String = "Reading")
+  }
+  @_Concurrency.MainActor final public var reportNotFound: ((Swift.String) -> Swift.Void)?
+  @_Concurrency.MainActor final public var setBusy: ((Swift.Bool) -> Swift.Void)?
+  @_Concurrency.MainActor public init(presenter: UIKit.UIViewController, request: DocumentScannerKit.DocumentValueRequest, appearance: DocumentScannerKit.DocumentSourceMenu.Appearance = Appearance())
+  @_Concurrency.MainActor final public func menu(found: @escaping (Swift.String) -> Swift.Void) -> UIKit.UIMenu
+  @objc deinit
+}
+extension DocumentScannerKit.DocumentSourceMenu : PhotosUI.PHPickerViewControllerDelegate {
+  @_Concurrency.MainActor @preconcurrency final public func picker(_ picker: PhotosUI.PHPickerViewController, didFinishPicking results: [PhotosUI.PHPickerResult])
+}
+extension DocumentScannerKit.DocumentSourceMenu : UIKit.UIDocumentPickerDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func documentPicker(_ controller: UIKit.UIDocumentPickerViewController, didPickDocumentsAt urls: [Foundation.URL])
+  @_Concurrency.MainActor @preconcurrency @objc final public func documentPickerWasCancelled(_ controller: UIKit.UIDocumentPickerViewController)
+}
+public struct DocumentValueRequest : Swift.Sendable {
+  public var liveGate: (@Sendable ([Swift.String]) -> Swift.Bool)?
+  public var read: @Sendable (DocumentScannerKit.ScannedDocument) -> Swift.String?
+  public var instruction: Swift.String
+  public var notFoundMessage: Swift.String
+  public var guideAspectRatio: Swift.Double
+  public var pageLimit: Swift.Int
+  public init(instruction: Swift.String, notFoundMessage: Swift.String, guideAspectRatio: Swift.Double = 1.5, pageLimit: Swift.Int = 5, liveGate: (@Sendable ([Swift.String]) -> Swift.Bool)? = nil, read: @escaping @Sendable (DocumentScannerKit.ScannedDocument) -> Swift.String?)
+}
+extension DocumentScannerKit.DocumentValueRequest {
+  public static let iban: DocumentScannerKit.DocumentValueRequest
+}
+public enum ValueScanOutcome : Swift.Sendable {
+  case found(Swift.String)
+  case notFound
+  case cancelled
+}
+public enum IBANExtractor {
+  public static func extract(from document: DocumentScannerKit.ScannedDocument) -> Swift.String?
+  public static func extract(from lines: [Swift.String]) -> (value: Swift.String, confidence: Swift.Double)?
+}
+public struct MRZResult : Swift.Equatable, Swift.Codable, Swift.Sendable {
+  public enum Format : Swift.String, Swift.Codable, Swift.Sendable {
+    case td1, td2, td3
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var format: DocumentScannerKit.MRZResult.Format
+  public var documentType: Swift.String
+  public var issuingCountry: Swift.String
+  public var surname: Swift.String
+  public var givenNames: Swift.String
+  public var documentNumber: Swift.String
+  public var nationality: Swift.String
+  public var dateOfBirth: Swift.String
+  public var sex: Swift.String
+  public var expiryDate: Swift.String
+  public var optionalData: Swift.String
+  public var allChecksPassed: Swift.Bool
+  public static func == (a: DocumentScannerKit.MRZResult, b: DocumentScannerKit.MRZResult) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum MRZParser {
+  public static func checkDigit(_ field: Swift.String) -> Swift.Int
+  public static func parse(_ block: Swift.String) -> DocumentScannerKit.MRZResult?
+  public static func candidateBlocks(_ lines: [Swift.String]) -> [Swift.String]
+  public static func firstValid(in lines: [Swift.String]) -> DocumentScannerKit.MRZResult?
+}
+@_Concurrency.MainActor public enum PaperScanner {
+  @_Concurrency.MainActor public static func present(from presenter: UIKit.UIViewController, recognizesText: Swift.Bool = true, completion: @escaping (Swift.Result<DocumentScannerKit.ScannedPaperDocument, any Swift.Error>) -> Swift.Void)
+}
+public enum ScanMode : Swift.Equatable, Swift.Sendable {
+  case auto
+  case manual(DocumentScannerKit.DocumentKind)
+  public var expectedType: DocumentScannerKit.DocumentKind? {
+    get
+  }
+  public var isAuto: Swift.Bool {
+    get
+  }
+  public static func == (a: DocumentScannerKit.ScanMode, b: DocumentScannerKit.ScanMode) -> Swift.Bool
+}
+public struct ScannedDocument : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public var documentType: DocumentScannerKit.DocumentKind
+  public var confidence: Swift.Double
+  public var classificationSignals: [Swift.String]
+  public var fields: [DocumentScannerKit.ScannedField]
+  public var mrz: DocumentScannerKit.MRZResult?
+  public var rawText: [Swift.String]
+  public var scannedAt: Foundation.Date?
+  public var expectedType: DocumentScannerKit.DocumentKind?
+  public var image: Foundation.Data?
+  public var documentSide: DocumentScannerKit.DocumentSide {
+    get
+  }
+  public var matchesExpectedType: Swift.Bool {
+    get
+  }
+  public init(documentType: DocumentScannerKit.DocumentKind, confidence: Swift.Double = 0, classificationSignals: [Swift.String] = [], fields: [DocumentScannerKit.ScannedField] = [], mrz: DocumentScannerKit.MRZResult? = nil, rawText: [Swift.String] = [], scannedAt: Foundation.Date? = nil, expectedType: DocumentScannerKit.DocumentKind? = nil)
+  public subscript(key: DocumentScannerKit.ScannedFieldKey) -> Swift.String? {
+    get
+  }
+  public func fields(in category: DocumentScannerKit.FieldCategory) -> [DocumentScannerKit.ScannedField]
+  public var dictionary: [Swift.String : Swift.String] {
+    get
+  }
+  public var fullName: Swift.String? {
+    get
+  }
+  public var surname: Swift.String? {
+    get
+  }
+  public var givenNames: Swift.String? {
+    get
+  }
+  public var dateOfBirth: Swift.String? {
+    get
+  }
+  public var sex: Swift.String? {
+    get
+  }
+  public var nationality: Swift.String? {
+    get
+  }
+  public var documentNumber: Swift.String? {
+    get
+  }
+  public var dateOfExpiry: Swift.String? {
+    get
+  }
+  public var dateOfIssue: Swift.String? {
+    get
+  }
+  public var payeeName: Swift.String? {
+    get
+  }
+  public var bankName: Swift.String? {
+    get
+  }
+  public var accountNumber: Swift.String? {
+    get
+  }
+  public var chequeNumber: Swift.String? {
+    get
+  }
+  public var iban: Swift.String? {
+    get
+  }
+  public var amountInWords: Swift.String? {
+    get
+  }
+  public var amountInFigures: Swift.String? {
+    get
+  }
+  public var jsonData: Foundation.Data {
+    get
+  }
+  public var jsonString: Swift.String {
+    get
+  }
+  public static func == (a: DocumentScannerKit.ScannedDocument, b: DocumentScannerKit.ScannedDocument) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum FieldCategory : Swift.String, Swift.Codable, Swift.Sendable, Swift.CaseIterable {
+  case personal
+  case document
+  case travel
+  case address
+  case banking
+  case vehicle
+  case business
+  case other
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [DocumentScannerKit.FieldCategory]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [DocumentScannerKit.FieldCategory] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ScannedFieldKey : Swift.RawRepresentable, Swift.Hashable, Swift.Codable, Swift.Sendable, Swift.ExpressibleByStringLiteral {
+  public let rawValue: Swift.String
+  public init(rawValue: Swift.String)
+  public init(_ rawValue: Swift.String)
+  public init(stringLiteral value: Swift.String)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias RawValue = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension DocumentScannerKit.ScannedFieldKey {
+  public static let fullName: DocumentScannerKit.ScannedFieldKey
+  public static let surname: DocumentScannerKit.ScannedFieldKey
+  public static let givenNames: DocumentScannerKit.ScannedFieldKey
+  public static let middleName: DocumentScannerKit.ScannedFieldKey
+  public static let maidenName: DocumentScannerKit.ScannedFieldKey
+  public static let fathersName: DocumentScannerKit.ScannedFieldKey
+  public static let mothersName: DocumentScannerKit.ScannedFieldKey
+  public static let spouseName: DocumentScannerKit.ScannedFieldKey
+  public static let dateOfBirth: DocumentScannerKit.ScannedFieldKey
+  public static let placeOfBirth: DocumentScannerKit.ScannedFieldKey
+  public static let sex: DocumentScannerKit.ScannedFieldKey
+  public static let nationality: DocumentScannerKit.ScannedFieldKey
+  public static let nationalityCode: DocumentScannerKit.ScannedFieldKey
+  public static let bloodGroup: DocumentScannerKit.ScannedFieldKey
+  public static let documentType: DocumentScannerKit.ScannedFieldKey
+  public static let documentSubtype: DocumentScannerKit.ScannedFieldKey
+  public static let documentNumber: DocumentScannerKit.ScannedFieldKey
+  public static let passportNumber: DocumentScannerKit.ScannedFieldKey
+  public static let nationalIDNumber: DocumentScannerKit.ScannedFieldKey
+  public static let emiratesIDNumber: DocumentScannerKit.ScannedFieldKey
+  public static let fileNumber: DocumentScannerKit.ScannedFieldKey
+  public static let personalNumber: DocumentScannerKit.ScannedFieldKey
+  public static let optionalData: DocumentScannerKit.ScannedFieldKey
+  public static let issuingCountry: DocumentScannerKit.ScannedFieldKey
+  public static let issuingState: DocumentScannerKit.ScannedFieldKey
+  public static let issuingAuthority: DocumentScannerKit.ScannedFieldKey
+  public static let placeOfIssue: DocumentScannerKit.ScannedFieldKey
+  public static let dateOfIssue: DocumentScannerKit.ScannedFieldKey
+  public static let dateOfExpiry: DocumentScannerKit.ScannedFieldKey
+  public static let cardNumber: DocumentScannerKit.ScannedFieldKey
+  public static let visaType: DocumentScannerKit.ScannedFieldKey
+  public static let visaNumber: DocumentScannerKit.ScannedFieldKey
+  public static let visaClass: DocumentScannerKit.ScannedFieldKey
+  public static let sponsor: DocumentScannerKit.ScannedFieldKey
+  public static let profession: DocumentScannerKit.ScannedFieldKey
+  public static let occupation: DocumentScannerKit.ScannedFieldKey
+  public static let employer: DocumentScannerKit.ScannedFieldKey
+  public static let entryType: DocumentScannerKit.ScannedFieldKey
+  public static let numberOfEntries: DocumentScannerKit.ScannedFieldKey
+  public static let durationOfStay: DocumentScannerKit.ScannedFieldKey
+  public static let portOfEntry: DocumentScannerKit.ScannedFieldKey
+  public static let validFrom: DocumentScannerKit.ScannedFieldKey
+  public static let validUntil: DocumentScannerKit.ScannedFieldKey
+  public static let address: DocumentScannerKit.ScannedFieldKey
+  public static let street: DocumentScannerKit.ScannedFieldKey
+  public static let city: DocumentScannerKit.ScannedFieldKey
+  public static let stateOrProvince: DocumentScannerKit.ScannedFieldKey
+  public static let postalCode: DocumentScannerKit.ScannedFieldKey
+  public static let country: DocumentScannerKit.ScannedFieldKey
+  public static let licenseNumber: DocumentScannerKit.ScannedFieldKey
+  public static let licenseClass: DocumentScannerKit.ScannedFieldKey
+  public static let vehicleCategories: DocumentScannerKit.ScannedFieldKey
+  public static let restrictions: DocumentScannerKit.ScannedFieldKey
+  public static let endorsements: DocumentScannerKit.ScannedFieldKey
+  public static let tradeName: DocumentScannerKit.ScannedFieldKey
+  public static let legalForm: DocumentScannerKit.ScannedFieldKey
+  public static let businessActivity: DocumentScannerKit.ScannedFieldKey
+  public static let registrationNumber: DocumentScannerKit.ScannedFieldKey
+  public static let payeeName: DocumentScannerKit.ScannedFieldKey
+  public static let accountHolder: DocumentScannerKit.ScannedFieldKey
+  public static let bankName: DocumentScannerKit.ScannedFieldKey
+  public static let branchName: DocumentScannerKit.ScannedFieldKey
+  public static let accountNumber: DocumentScannerKit.ScannedFieldKey
+  public static let iban: DocumentScannerKit.ScannedFieldKey
+  public static let swiftCode: DocumentScannerKit.ScannedFieldKey
+  public static let routingNumber: DocumentScannerKit.ScannedFieldKey
+  public static let sortCode: DocumentScannerKit.ScannedFieldKey
+  public static let chequeNumber: DocumentScannerKit.ScannedFieldKey
+  public static let micrLine: DocumentScannerKit.ScannedFieldKey
+  public static let micrChequeNumber: DocumentScannerKit.ScannedFieldKey
+  public static let micrAccountNumber: DocumentScannerKit.ScannedFieldKey
+  public static let receiptNumber: DocumentScannerKit.ScannedFieldKey
+  public static let amountInWords: DocumentScannerKit.ScannedFieldKey
+  public static let amountInFigures: DocumentScannerKit.ScannedFieldKey
+  public static let amountValue: DocumentScannerKit.ScannedFieldKey
+  public static let currency: DocumentScannerKit.ScannedFieldKey
+  public static let chequeDate: DocumentScannerKit.ScannedFieldKey
+  public static let detectedDate: DocumentScannerKit.ScannedFieldKey
+}
+public struct ScannedField : Swift.Codable, Swift.Equatable, Swift.Sendable, Swift.Identifiable {
+  public let key: DocumentScannerKit.ScannedFieldKey
+  public let label: Swift.String
+  public let value: Swift.String
+  public let category: DocumentScannerKit.FieldCategory
+  public let confidence: Swift.Double?
+  public var confidencePercent: Swift.Int? {
+    get
+  }
+  public var id: Swift.String {
+    get
+  }
+  public init(key: DocumentScannerKit.ScannedFieldKey, label: Swift.String, value: Swift.String, category: DocumentScannerKit.FieldCategory, confidence: Swift.Double? = nil)
+  public static func == (a: DocumentScannerKit.ScannedField, b: DocumentScannerKit.ScannedField) -> Swift.Bool
+  public typealias ID = Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ScannedPaperPage : @unchecked Swift.Sendable {
+  public let image: UIKit.UIImage
+  public let recognizedText: Swift.String?
+  public init(image: UIKit.UIImage, recognizedText: Swift.String?)
+}
+public struct ScannedPaperDocument : @unchecked Swift.Sendable {
+  public let pages: [DocumentScannerKit.ScannedPaperPage]
+  public let scannedAt: Foundation.Date
+  public init(pages: [DocumentScannerKit.ScannedPaperPage], scannedAt: Foundation.Date = Date())
+  public func pdfData() -> Foundation.Data?
+}
+public struct ScannerConfiguration : Swift.Sendable {
+  public var mode: DocumentScannerKit.ScanMode
+  public var acceptedDocumentTypes: Swift.Set<DocumentScannerKit.DocumentKind>?
+  public var autoCaptureMRZ: Swift.Bool
+  public var autoCaptureOnClassification: Swift.Bool
+  public var minimumAutoConfidence: Swift.Double
+  public var autoCaptureRequiresReadable: Swift.Bool
+  public var autoCaptureContentGate: (@Sendable ([Swift.String]) -> Swift.Bool)?
+  public var autoCaptureDwell: Swift.Double
+  public var votesNeeded: Swift.Int
+  public var requiresDocumentInFrame: Swift.Bool
+  public var minimumFillRatio: Swift.Double
+  public var promptOnTypeMismatch: Swift.Bool
+  public var allowsMismatchedAttachment: Swift.Bool
+  public var logsRawText: Swift.Bool
+  public var showsGuideOverlay: Swift.Bool
+  public var guideAspectRatio: Swift.Double
+  public var useStaticBorder: Swift.Bool
+  public var adaptsStaticBorderToDocument: Swift.Bool
+  public var enforcesGuideBoundary: Swift.Bool
+  public var showsBorderStyleToggle: Swift.Bool
+  public var trackingBorderColor: UIKit.UIColor
+  public var steadyBorderColor: UIKit.UIColor
+  public var captureOnly: Swift.Bool
+  public var showsCaptureButton: Swift.Bool
+  public var showsCancelButton: Swift.Bool
+  public var captureButtonTitle: Swift.String
+  public var cancelButtonTitle: Swift.String
+  public var helpText: Swift.String?
+  public var instructionText: Swift.String
+  public init(mode: DocumentScannerKit.ScanMode = .auto, acceptedDocumentTypes: Swift.Set<DocumentScannerKit.DocumentKind>? = nil, autoCaptureMRZ: Swift.Bool = true, autoCaptureOnClassification: Swift.Bool = true, minimumAutoConfidence: Swift.Double = 0.5, autoCaptureRequiresReadable: Swift.Bool = true, votesNeeded: Swift.Int = 2, requiresDocumentInFrame: Swift.Bool = true, minimumFillRatio: Swift.Double = 0.5, promptOnTypeMismatch: Swift.Bool = true, logsRawText: Swift.Bool = false, showsGuideOverlay: Swift.Bool = true, guideAspectRatio: Swift.Double = 1.58, showsCaptureButton: Swift.Bool = true, showsCancelButton: Swift.Bool = true, captureButtonTitle: Swift.String = "Capture", cancelButtonTitle: Swift.String = "Cancel", helpText: Swift.String? = nil, instructionText: Swift.String = "Fit the whole document inside the frame; it captures automatically.")
+  public static var auto: DocumentScannerKit.ScannerConfiguration {
+    get
+  }
+  public static func manual(_ kind: DocumentScannerKit.DocumentKind) -> DocumentScannerKit.ScannerConfiguration
+  public static var `default`: DocumentScannerKit.ScannerConfiguration {
+    get
+  }
+}
+public enum TextNormalization {
+  public static func normalizeDigits(_ s: Swift.String) -> Swift.String
+  public static func stripArabic(_ s: Swift.String) -> Swift.String
+  public static func sanitizeValue(_ raw: Swift.String) -> Swift.String
+  public static func detectDates(in text: Swift.String) -> [Swift.String]
+}
+extension DocumentScannerKit.DocumentSide : Swift.Equatable {}
+extension DocumentScannerKit.DocumentSide : Swift.Hashable {}
+extension DocumentScannerKit.DocumentSide : Swift.RawRepresentable {}
+extension DocumentScannerKit.DocumentKind : Swift.Equatable {}
+extension DocumentScannerKit.DocumentKind : Swift.Hashable {}
+extension DocumentScannerKit.DocumentKind : Swift.RawRepresentable {}
+extension DocumentScannerKit.DocumentScanner : Swift.Sendable {}
+extension DocumentScannerKit.DocumentScannerView : Swift.Sendable {}
+extension DocumentScannerKit.DocumentSourceMenu : Swift.Sendable {}
+extension DocumentScannerKit.MRZResult.Format : Swift.Equatable {}
+extension DocumentScannerKit.MRZResult.Format : Swift.Hashable {}
+extension DocumentScannerKit.MRZResult.Format : Swift.RawRepresentable {}
+extension DocumentScannerKit.PaperScanner : Swift.Sendable {}
+extension DocumentScannerKit.FieldCategory : Swift.Equatable {}
+extension DocumentScannerKit.FieldCategory : Swift.Hashable {}
+extension DocumentScannerKit.FieldCategory : Swift.RawRepresentable {}

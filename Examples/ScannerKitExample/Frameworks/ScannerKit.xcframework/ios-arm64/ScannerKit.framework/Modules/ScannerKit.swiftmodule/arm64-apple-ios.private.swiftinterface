@@ -1,0 +1,68 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios16.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ScannerKit
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
+@_exported import DocumentScannerKit
+import Foundation
+import IDScanner
+import Security
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct ScannerKitConfiguration : Swift.Sendable, Swift.Equatable {
+  public let licenseKey: Swift.String
+  public var usesMRZFallback: Swift.Bool
+  public var productIdentifier: Swift.String
+  public init(licenseKey: Swift.String, usesMRZFallback: Swift.Bool = false)
+  @available(*, deprecated, message: "The bundle identifier is detected automatically.")
+  public init(licenseKey: Swift.String, productIdentifier: Swift.String, usesMRZFallback: Swift.Bool = false)
+  public static func == (a: ScannerKit.ScannerKitConfiguration, b: ScannerKit.ScannerKitConfiguration) -> Swift.Bool
+}
+public enum ScannerKitError : Foundation.LocalizedError, Swift.Equatable {
+  case notConfigured
+  case invalidLicenseKey
+  case licenseNotActivated
+  case bundleNotAllowed
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: ScannerKit.ScannerKitError, b: ScannerKit.ScannerKitError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ScannerKitLicense : Swift.Codable, Swift.Sendable, Swift.Equatable {
+  public let customerIdentifier: Swift.String
+  public let expiresAt: Foundation.Date?
+  public let features: Swift.Set<Swift.String>
+  public init(customerIdentifier: Swift.String, expiresAt: Foundation.Date?, features: Swift.Set<Swift.String>)
+  public var isExpired: Swift.Bool {
+    get
+  }
+  public static func == (a: ScannerKit.ScannerKitLicense, b: ScannerKit.ScannerKitLicense) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol ScannerKitLicenseValidating : Swift.Sendable {
+  func validate(licenseKey: Swift.String, productIdentifier: Swift.String) async throws -> ScannerKit.ScannerKitLicense
+}
+public struct ScannerKitRemoteLicenseValidator : ScannerKit.ScannerKitLicenseValidating {
+  public let endpoint: Foundation.URL
+  public init(endpoint: Foundation.URL)
+  public func validate(licenseKey: Swift.String, productIdentifier: Swift.String) async throws -> ScannerKit.ScannerKitLicense
+}
+@_Concurrency.MainActor public enum ScannerKit {
+  @_Concurrency.MainActor public static var license: ScannerKit.ScannerKitLicense? {
+    get
+  }
+  @_Concurrency.MainActor public static func configure(_ configuration: ScannerKit.ScannerKitConfiguration) throws
+  @_Concurrency.MainActor public static func activate(using validator: some ScannerKitLicenseValidating) async throws
+  @_Concurrency.MainActor public static func activate() async throws
+  @_Concurrency.MainActor public static func present(from presenter: UIKit.UIViewController, configuration: DocumentScannerKit.ScannerConfiguration = .default, completion: @escaping (Swift.Result<DocumentScannerKit.ScannedDocument, ScannerKit.ScannerKitError>) -> Swift.Void)
+  @_Concurrency.MainActor public static func presentCapture(from presenter: UIKit.UIViewController, expecting: DocumentScannerKit.DocumentKind? = nil, guideAspectRatio: Swift.Double = 1.5, instructionText: Swift.String? = nil, completion: @escaping (DocumentScannerKit.CapturedDocument?) -> Swift.Void)
+}
+extension ScannerKit.ScannerKitError : Swift.Hashable {}
+extension ScannerKit.ScannerKit : Swift.Sendable {}

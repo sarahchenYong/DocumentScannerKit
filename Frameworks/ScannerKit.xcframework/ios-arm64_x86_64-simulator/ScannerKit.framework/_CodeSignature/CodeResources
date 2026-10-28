@@ -14,27 +14,43 @@
 		</data>
 		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
+		f9lIEA0rCxtAhPoW+aIsfqDpQeA=
+		</data>
+		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		68NAw3TYS5bWZbcS7Kk0emcjwuU=
 		</data>
 		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
 		RO5p232eK7i5IIgkz0LJ3OmO1qw=
 		</data>
+		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		68NAw3TYS5bWZbcS7Kk0emcjwuU=
+		</data>
 		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Nuy3TeB9OR+grR65QbaH5PMUCvo=
+		6eoQmeWUUm8HCBbwxlICRyvyM0E=
 		</data>
 		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		gcwBsH4BgyFY4sVtNt+/xOKS3vY=
+		f9lIEA0rCxtAhPoW+aIsfqDpQeA=
+		</data>
+		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		3OAa3iKHl1HSOmrl5uSCo3zOJvY=
 		</data>
 		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
 		lkCFAk42SSrPXoVs4fOY/p1aoxc=
 		</data>
+		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		3OAa3iKHl1HSOmrl5uSCo3zOJvY=
+		</data>
 		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZuYh0wyEFQ0dJNQRAkbVIAreDJM=
+		iA4T1pe3iVFNase61X6A8cRh0Q8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,7 +70,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
+			iC+zwQY/rd9VldZnBZkin0sZK3hIOay4eTWPa0zRWCM=
+			</data>
+		</dict>
+		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lCUpFFQTNuX3EmFk2mViDADax0Pk9Cqjyw5OTrkIfQE=
 			</data>
 		</dict>
 		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -64,18 +87,32 @@
 			Kv5XKjo1Gl5qATNlL9s7VX75fsBQwpBYAS5SjxIvWRM=
 			</data>
 		</dict>
+		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lCUpFFQTNuX3EmFk2mViDADax0Pk9Cqjyw5OTrkIfQE=
+			</data>
+		</dict>
 		<key>Modules/ScannerKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LspmkLb9B5X0fI1zPMxA5+0lzuEoSM/3WUA+Cke5ZFw=
+			S4xKtJ3J38yvjitAHQQP0x/FtamvoLveULY3gLdFebA=
 			</data>
 		</dict>
 		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qnesa0n4URGWAopawg9bGx36dUwkYV00BoCJ8LFzlyg=
+			iC+zwQY/rd9VldZnBZkin0sZK3hIOay4eTWPa0zRWCM=
+			</data>
+		</dict>
+		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			e+WBrAFKdnE2kLea2j1SlIx1iQhNKs1wbWB66J+DgKU=
 			</data>
 		</dict>
 		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -85,11 +122,18 @@
 			HPtrHfJ101expiYOHVUbslZ1mPt0kJzd2ZfXnPoED1Q=
 			</data>
 		</dict>
+		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			e+WBrAFKdnE2kLea2j1SlIx1iQhNKs1wbWB66J+DgKU=
+			</data>
+		</dict>
 		<key>Modules/ScannerKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UsdhIxGw5t731xjpPtnMd2RTpIG0j92rIVema1KEodI=
+			cIaVIjiF67CfpCs/ZRFmLef3DcXTlIsZ2Ai9+03LYhw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

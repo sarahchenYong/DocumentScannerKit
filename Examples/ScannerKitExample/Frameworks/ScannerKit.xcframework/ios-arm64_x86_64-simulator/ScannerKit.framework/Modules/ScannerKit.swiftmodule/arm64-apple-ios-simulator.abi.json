@@ -1,9 +1,1826 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "NO_MODULE",
-    "printedName": "NO_MODULE",
+    "name": "ScannerKit",
+    "printedName": "ScannerKit",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "DocumentScannerKit",
+        "printedName": "DocumentScannerKit",
+        "declKind": "Import",
+        "moduleName": "ScannerKit",
+        "declAttributes": [
+          "Exported"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ScannerKit"
+      },
+      {
+        "kind": "Import",
+        "name": "IDScanner",
+        "printedName": "IDScanner",
+        "declKind": "Import",
+        "moduleName": "ScannerKit"
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "ScannerKit"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "ScannerKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScannerKitConfiguration",
+        "printedName": "ScannerKitConfiguration",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "licenseKey",
+            "printedName": "licenseKey",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB13ConfigurationV10licenseKeySSvp",
+            "mangledName": "$s10ScannerKit0aB13ConfigurationV10licenseKeySSvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV10licenseKeySSvg",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV10licenseKeySSvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "usesMRZFallback",
+            "printedName": "usesMRZFallback",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvp",
+            "mangledName": "$s10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvg",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvs",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvs",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvM",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV15usesMRZFallbackSbvM",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "productIdentifier",
+            "printedName": "productIdentifier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB13ConfigurationV17productIdentifierSSvp",
+            "mangledName": "$s10ScannerKit0aB13ConfigurationV17productIdentifierSSvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV17productIdentifierSSvg",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV17productIdentifierSSvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV17productIdentifierSSvs",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV17productIdentifierSSvs",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB13ConfigurationV17productIdentifierSSvM",
+                "mangledName": "$s10ScannerKit0aB13ConfigurationV17productIdentifierSSvM",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(licenseKey:usesMRZFallback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitConfiguration",
+                "printedName": "ScannerKit.ScannerKitConfiguration",
+                "usr": "s:10ScannerKit0aB13ConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10ScannerKit0aB13ConfigurationV10licenseKey15usesMRZFallbackACSS_Sbtcfc",
+            "mangledName": "$s10ScannerKit0aB13ConfigurationV10licenseKey15usesMRZFallbackACSS_Sbtcfc",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(licenseKey:productIdentifier:usesMRZFallback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitConfiguration",
+                "printedName": "ScannerKit.ScannerKitConfiguration",
+                "usr": "s:10ScannerKit0aB13ConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10ScannerKit0aB13ConfigurationV10licenseKey17productIdentifier15usesMRZFallbackACSS_SSSbtcfc",
+            "mangledName": "$s10ScannerKit0aB13ConfigurationV10licenseKey17productIdentifier15usesMRZFallbackACSS_SSSbtcfc",
+            "moduleName": "ScannerKit",
+            "deprecated": true,
+            "declAttributes": [
+              "AccessControl",
+              "Available"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitConfiguration",
+                "printedName": "ScannerKit.ScannerKitConfiguration",
+                "usr": "s:10ScannerKit0aB13ConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitConfiguration",
+                "printedName": "ScannerKit.ScannerKitConfiguration",
+                "usr": "s:10ScannerKit0aB13ConfigurationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB13ConfigurationV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s10ScannerKit0aB13ConfigurationV2eeoiySbAC_ACtFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10ScannerKit0aB13ConfigurationV",
+        "mangledName": "$s10ScannerKit0aB13ConfigurationV",
+        "moduleName": "ScannerKit",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScannerKitError",
+        "printedName": "ScannerKitError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "notConfigured",
+            "printedName": "notConfigured",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ScannerKit.ScannerKitError.Type) -> ScannerKit.ScannerKitError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ScannerKitError",
+                    "printedName": "ScannerKit.ScannerKitError",
+                    "usr": "s:10ScannerKit0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ScannerKit.ScannerKitError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannerKitError",
+                        "printedName": "ScannerKit.ScannerKitError",
+                        "usr": "s:10ScannerKit0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10ScannerKit0aB5ErrorO13notConfiguredyA2CmF",
+            "mangledName": "$s10ScannerKit0aB5ErrorO13notConfiguredyA2CmF",
+            "moduleName": "ScannerKit"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidLicenseKey",
+            "printedName": "invalidLicenseKey",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ScannerKit.ScannerKitError.Type) -> ScannerKit.ScannerKitError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ScannerKitError",
+                    "printedName": "ScannerKit.ScannerKitError",
+                    "usr": "s:10ScannerKit0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ScannerKit.ScannerKitError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannerKitError",
+                        "printedName": "ScannerKit.ScannerKitError",
+                        "usr": "s:10ScannerKit0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10ScannerKit0aB5ErrorO17invalidLicenseKeyyA2CmF",
+            "mangledName": "$s10ScannerKit0aB5ErrorO17invalidLicenseKeyyA2CmF",
+            "moduleName": "ScannerKit"
+          },
+          {
+            "kind": "Var",
+            "name": "licenseNotActivated",
+            "printedName": "licenseNotActivated",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ScannerKit.ScannerKitError.Type) -> ScannerKit.ScannerKitError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ScannerKitError",
+                    "printedName": "ScannerKit.ScannerKitError",
+                    "usr": "s:10ScannerKit0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ScannerKit.ScannerKitError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannerKitError",
+                        "printedName": "ScannerKit.ScannerKitError",
+                        "usr": "s:10ScannerKit0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10ScannerKit0aB5ErrorO19licenseNotActivatedyA2CmF",
+            "mangledName": "$s10ScannerKit0aB5ErrorO19licenseNotActivatedyA2CmF",
+            "moduleName": "ScannerKit"
+          },
+          {
+            "kind": "Var",
+            "name": "bundleNotAllowed",
+            "printedName": "bundleNotAllowed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(ScannerKit.ScannerKitError.Type) -> ScannerKit.ScannerKitError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ScannerKitError",
+                    "printedName": "ScannerKit.ScannerKitError",
+                    "usr": "s:10ScannerKit0aB5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "ScannerKit.ScannerKitError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannerKitError",
+                        "printedName": "ScannerKit.ScannerKitError",
+                        "usr": "s:10ScannerKit0aB5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10ScannerKit0aB5ErrorO16bundleNotAllowedyA2CmF",
+            "mangledName": "$s10ScannerKit0aB5ErrorO16bundleNotAllowedyA2CmF",
+            "moduleName": "ScannerKit"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB5ErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s10ScannerKit0aB5ErrorO16errorDescriptionSSSgvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB5ErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s10ScannerKit0aB5ErrorO16errorDescriptionSSSgvg",
+                "moduleName": "ScannerKit",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB5ErrorO9hashValueSivp",
+            "mangledName": "$s10ScannerKit0aB5ErrorO9hashValueSivp",
+            "moduleName": "ScannerKit",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB5ErrorO9hashValueSivg",
+                "mangledName": "$s10ScannerKit0aB5ErrorO9hashValueSivg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB5ErrorO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s10ScannerKit0aB5ErrorO4hash4intoys6HasherVz_tF",
+            "moduleName": "ScannerKit",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitError",
+                "printedName": "ScannerKit.ScannerKitError",
+                "usr": "s:10ScannerKit0aB5ErrorO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitError",
+                "printedName": "ScannerKit.ScannerKitError",
+                "usr": "s:10ScannerKit0aB5ErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB5ErrorO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s10ScannerKit0aB5ErrorO2eeoiySbAC_ACtFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:10ScannerKit0aB5ErrorO",
+        "mangledName": "$s10ScannerKit0aB5ErrorO",
+        "moduleName": "ScannerKit",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScannerKitLicense",
+        "printedName": "ScannerKitLicense",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "customerIdentifier",
+            "printedName": "customerIdentifier",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB7LicenseV18customerIdentifierSSvp",
+            "mangledName": "$s10ScannerKit0aB7LicenseV18customerIdentifierSSvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB7LicenseV18customerIdentifierSSvg",
+                "mangledName": "$s10ScannerKit0aB7LicenseV18customerIdentifierSSvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expiresAt",
+            "printedName": "expiresAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB7LicenseV9expiresAt10Foundation4DateVSgvp",
+            "mangledName": "$s10ScannerKit0aB7LicenseV9expiresAt10Foundation4DateVSgvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB7LicenseV9expiresAt10Foundation4DateVSgvg",
+                "mangledName": "$s10ScannerKit0aB7LicenseV9expiresAt10Foundation4DateVSgvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "features",
+            "printedName": "features",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB7LicenseV8featuresShySSGvp",
+            "mangledName": "$s10ScannerKit0aB7LicenseV8featuresShySSGvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Set",
+                    "printedName": "Swift.Set<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sh"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB7LicenseV8featuresShySSGvg",
+                "mangledName": "$s10ScannerKit0aB7LicenseV8featuresShySSGvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(customerIdentifier:expiresAt:features:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitLicense",
+                "printedName": "ScannerKit.ScannerKitLicense",
+                "usr": "s:10ScannerKit0aB7LicenseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sh"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10ScannerKit0aB7LicenseV18customerIdentifier9expiresAt8featuresACSS_10Foundation4DateVSgShySSGtcfc",
+            "mangledName": "$s10ScannerKit0aB7LicenseV18customerIdentifier9expiresAt8featuresACSS_10Foundation4DateVSgShySSGtcfc",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "isExpired",
+            "printedName": "isExpired",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB7LicenseV9isExpiredSbvp",
+            "mangledName": "$s10ScannerKit0aB7LicenseV9isExpiredSbvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB7LicenseV9isExpiredSbvg",
+                "mangledName": "$s10ScannerKit0aB7LicenseV9isExpiredSbvg",
+                "moduleName": "ScannerKit",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitLicense",
+                "printedName": "ScannerKit.ScannerKitLicense",
+                "usr": "s:10ScannerKit0aB7LicenseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10ScannerKit0aB7LicenseV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s10ScannerKit0aB7LicenseV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "ScannerKit",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB7LicenseV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s10ScannerKit0aB7LicenseV6encode2toys7Encoder_p_tKF",
+            "moduleName": "ScannerKit",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitLicense",
+                "printedName": "ScannerKit.ScannerKitLicense",
+                "usr": "s:10ScannerKit0aB7LicenseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitLicense",
+                "printedName": "ScannerKit.ScannerKitLicense",
+                "usr": "s:10ScannerKit0aB7LicenseV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB7LicenseV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s10ScannerKit0aB7LicenseV2eeoiySbAC_ACtFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10ScannerKit0aB7LicenseV",
+        "mangledName": "$s10ScannerKit0aB7LicenseV",
+        "moduleName": "ScannerKit",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScannerKitLicenseValidating",
+        "printedName": "ScannerKitLicenseValidating",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "validate",
+            "printedName": "validate(licenseKey:productIdentifier:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitLicense",
+                "printedName": "ScannerKit.ScannerKitLicense",
+                "usr": "s:10ScannerKit0aB7LicenseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB17LicenseValidatingP8validate10licenseKey17productIdentifierAA0abC0VSS_SStYaKF",
+            "mangledName": "$s10ScannerKit0aB17LicenseValidatingP8validate10licenseKey17productIdentifierAA0abC0VSS_SStYaKF",
+            "moduleName": "ScannerKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : ScannerKit.ScannerKitLicenseValidating>",
+            "sugared_genericSig": "<Self where Self : ScannerKit.ScannerKitLicenseValidating>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:10ScannerKit0aB17LicenseValidatingP",
+        "mangledName": "$s10ScannerKit0aB17LicenseValidatingP",
+        "moduleName": "ScannerKit",
+        "genericSig": "<τ_0_0 : Swift.Sendable>",
+        "sugared_genericSig": "<Self : Swift.Sendable>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScannerKitRemoteLicenseValidator",
+        "printedName": "ScannerKitRemoteLicenseValidator",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "endpoint",
+            "printedName": "endpoint",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKit0aB22RemoteLicenseValidatorV8endpoint10Foundation3URLVvp",
+            "mangledName": "$s10ScannerKit0aB22RemoteLicenseValidatorV8endpoint10Foundation3URLVvp",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKit0aB22RemoteLicenseValidatorV8endpoint10Foundation3URLVvg",
+                "mangledName": "$s10ScannerKit0aB22RemoteLicenseValidatorV8endpoint10Foundation3URLVvg",
+                "moduleName": "ScannerKit",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(endpoint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitRemoteLicenseValidator",
+                "printedName": "ScannerKit.ScannerKitRemoteLicenseValidator",
+                "usr": "s:10ScannerKit0aB22RemoteLicenseValidatorV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10ScannerKit0aB22RemoteLicenseValidatorV8endpointAC10Foundation3URLV_tcfc",
+            "mangledName": "$s10ScannerKit0aB22RemoteLicenseValidatorV8endpointAC10Foundation3URLV_tcfc",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "validate",
+            "printedName": "validate(licenseKey:productIdentifier:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitLicense",
+                "printedName": "ScannerKit.ScannerKitLicense",
+                "usr": "s:10ScannerKit0aB7LicenseV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKit0aB22RemoteLicenseValidatorV8validate10licenseKey17productIdentifierAA0abD0VSS_SStYaKF",
+            "mangledName": "$s10ScannerKit0aB22RemoteLicenseValidatorV8validate10licenseKey17productIdentifierAA0abD0VSS_SStYaKF",
+            "moduleName": "ScannerKit",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10ScannerKit0aB22RemoteLicenseValidatorV",
+        "mangledName": "$s10ScannerKit0aB22RemoteLicenseValidatorV",
+        "moduleName": "ScannerKit",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ScannerKitLicenseValidating",
+            "printedName": "ScannerKitLicenseValidating",
+            "usr": "s:10ScannerKit0aB17LicenseValidatingP",
+            "mangledName": "$s10ScannerKit0aB17LicenseValidatingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SendableMetatype",
+            "printedName": "SendableMetatype",
+            "usr": "s:s16SendableMetatypeP",
+            "mangledName": "$ss16SendableMetatypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ScannerKit",
+        "printedName": "ScannerKit",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "license",
+            "printedName": "license",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "ScannerKit.ScannerKitLicense?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ScannerKitLicense",
+                    "printedName": "ScannerKit.ScannerKitLicense",
+                    "usr": "s:10ScannerKit0aB7LicenseV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10ScannerKitAAO7licenseAA0aB7LicenseVSgvpZ",
+            "mangledName": "$s10ScannerKitAAO7licenseAA0aB7LicenseVSgvpZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Custom",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "ScannerKit.ScannerKitLicense?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannerKitLicense",
+                        "printedName": "ScannerKit.ScannerKitLicense",
+                        "usr": "s:10ScannerKit0aB7LicenseV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10ScannerKitAAO7licenseAA0aB7LicenseVSgvgZ",
+                "mangledName": "$s10ScannerKitAAO7licenseAA0aB7LicenseVSgvgZ",
+                "moduleName": "ScannerKit",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "configure",
+            "printedName": "configure(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerKitConfiguration",
+                "printedName": "ScannerKit.ScannerKitConfiguration",
+                "usr": "s:10ScannerKit0aB13ConfigurationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKitAAO9configureyyAA0aB13ConfigurationVKFZ",
+            "mangledName": "$s10ScannerKitAAO9configureyyAA0aB13ConfigurationVKFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "activate",
+            "printedName": "activate(using:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKitAAO8activate5usingyx_tYaKAA0aB17LicenseValidatingRzlFZ",
+            "mangledName": "$s10ScannerKitAAO8activate5usingyx_tYaKAA0aB17LicenseValidatingRzlFZ",
+            "moduleName": "ScannerKit",
+            "genericSig": "<τ_0_0 where τ_0_0 : ScannerKit.ScannerKitLicenseValidating>",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "activate",
+            "printedName": "activate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKitAAO8activateyyYaKFZ",
+            "mangledName": "$s10ScannerKitAAO8activateyyYaKFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(from:configuration:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerConfiguration",
+                "printedName": "DocumentScannerKit.ScannerConfiguration",
+                "hasDefaultArg": true,
+                "usr": "s:18DocumentScannerKit0B13ConfigurationV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<DocumentScannerKit.ScannedDocument, ScannerKit.ScannerKitError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<DocumentScannerKit.ScannedDocument, ScannerKit.ScannerKitError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannedDocument",
+                        "printedName": "DocumentScannerKit.ScannedDocument",
+                        "usr": "s:18DocumentScannerKit07ScannedA0V"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannerKitError",
+                        "printedName": "ScannerKit.ScannerKitError",
+                        "usr": "s:10ScannerKit0aB5ErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKitAAO7present4from13configuration10completionySo16UIViewControllerC_08DocumentaB00A13ConfigurationVys6ResultOyAI07ScannedI0VAA0aB5ErrorOGctFZ",
+            "mangledName": "$s10ScannerKitAAO7present4from13configuration10completionySo16UIViewControllerC_08DocumentaB00A13ConfigurationVys6ResultOyAI07ScannedI0VAA0aB5ErrorOGctFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentCapture",
+            "printedName": "presentCapture(from:expecting:guideAspectRatio:instructionText:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DocumentScannerKit.DocumentKind?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DocumentKind",
+                    "printedName": "DocumentScannerKit.DocumentKind",
+                    "usr": "s:18DocumentScannerKit0A4KindO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DocumentScannerKit.CapturedDocument?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DocumentScannerKit.CapturedDocument?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CapturedDocument",
+                        "printedName": "DocumentScannerKit.CapturedDocument",
+                        "usr": "s:18DocumentScannerKit08CapturedA0V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10ScannerKitAAO14presentCapture4from9expecting16guideAspectRatio15instructionText10completionySo16UIViewControllerC_08DocumentaB00O4KindOSgSdSSSgyAK08CapturedO0VSgctFZ",
+            "mangledName": "$s10ScannerKitAAO14presentCapture4from9expecting16guideAspectRatio15instructionText10completionySo16UIViewControllerC_08DocumentaB00O4KindOSgSdSSSgyAK08CapturedO0VSgctFZ",
+            "moduleName": "ScannerKit",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:10ScannerKitAAO",
+        "mangledName": "$s10ScannerKitAAO",
+        "moduleName": "ScannerKit",
+        "declAttributes": [
+          "AccessControl",
+          "Custom",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/ScannerKit\/ScannerKit.swift",
+      "kind": "BooleanLiteral",
+      "offset": 337,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/ScannerKit\/ScannerKit.swift",
+      "kind": "BooleanLiteral",
+      "offset": 731,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/ScannerKit\/ScannerKit.swift",
+      "kind": "StringLiteral",
+      "offset": 3756,
+      "length": 70,
+      "value": "\"https:\/\/scannerkit-licenses.ashokdy.workers.dev\/v1\/licenses\/validate\""
+    },
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/ScannerKit\/ScannerKit.swift",
+      "kind": "Array",
+      "offset": 4175,
+      "length": 75,
+      "value": "[\"com.ios.nesnar.tamkeen\", \"com.binghatti.workspace\"]"
+    },
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/ScannerKit\/ScannerKit.swift",
+      "kind": "FloatLiteral",
+      "offset": 6938,
+      "length": 3,
+      "value": "1.5"
+    },
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/ScannerKit\/ScannerKit.swift",
+      "kind": "StringLiteral",
+      "offset": 7565,
+      "length": 24,
+      "value": "\"com.scannerkit.license\""
+    }
+  ]
 }

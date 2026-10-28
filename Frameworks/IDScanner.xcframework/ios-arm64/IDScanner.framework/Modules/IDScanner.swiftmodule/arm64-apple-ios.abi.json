@@ -1,9 +1,224 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "NO_MODULE",
-    "printedName": "NO_MODULE",
+    "name": "IDScanner",
+    "printedName": "IDScanner",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "DocumentScannerKit",
+        "printedName": "DocumentScannerKit",
+        "declKind": "Import",
+        "moduleName": "IDScanner"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "IDScanner"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IDScanner",
+        "printedName": "IDScanner",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(from:configuration:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ScannerConfiguration",
+                "printedName": "DocumentScannerKit.ScannerConfiguration",
+                "hasDefaultArg": true,
+                "usr": "s:18DocumentScannerKit0B13ConfigurationV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DocumentScannerKit.ScannedDocument?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DocumentScannerKit.ScannedDocument?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ScannedDocument",
+                        "printedName": "DocumentScannerKit.ScannedDocument",
+                        "usr": "s:18DocumentScannerKit07ScannedA0V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9IDScannerAAO7present4from13configuration10completionySo16UIViewControllerC_18DocumentScannerKit0I13ConfigurationVyAI07ScannedH0VSgctFZ",
+            "mangledName": "$s9IDScannerAAO7present4from13configuration10completionySo16UIViewControllerC_18DocumentScannerKit0I13ConfigurationVyAI07ScannedH0VSgctFZ",
+            "moduleName": "IDScanner",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentCapture",
+            "printedName": "presentCapture(from:expecting:guideAspectRatio:instructionText:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "DocumentScannerKit.DocumentKind?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DocumentKind",
+                    "printedName": "DocumentScannerKit.DocumentKind",
+                    "usr": "s:18DocumentScannerKit0A4KindO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(DocumentScannerKit.CapturedDocument?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "DocumentScannerKit.CapturedDocument?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CapturedDocument",
+                        "printedName": "DocumentScannerKit.CapturedDocument",
+                        "usr": "s:18DocumentScannerKit08CapturedA0V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9IDScannerAAO14presentCapture4from9expecting16guideAspectRatio15instructionText10completionySo16UIViewControllerC_18DocumentScannerKit0N4KindOSgSdSSSgyAK08CapturedN0VSgctFZ",
+            "mangledName": "$s9IDScannerAAO14presentCapture4from9expecting16guideAspectRatio15instructionText10completionySo16UIViewControllerC_18DocumentScannerKit0N4KindOSgSdSSSgyAK08CapturedN0VSgctFZ",
+            "moduleName": "IDScanner",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:9IDScannerAAO",
+        "mangledName": "$s9IDScannerAAO",
+        "moduleName": "IDScanner",
+        "declAttributes": [
+          "AccessControl",
+          "Custom",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      }
+    ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/tmp\/scannerkit-source-local\/Sources\/IDScanner\/IDScanner.swift",
+      "kind": "FloatLiteral",
+      "offset": 820,
+      "length": 3,
+      "value": "1.5"
+    }
+  ]
 }

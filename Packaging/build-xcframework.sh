@@ -18,7 +18,8 @@ for platform in iOS "iOS Simulator"; do
     -archivePath "$BUILD/$name.xcarchive" \
     -configuration Release \
     SKIP_INSTALL=NO \
-    BUILD_LIBRARY_FOR_DISTRIBUTION=NO
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    SWIFT_VERIFY_MODULE_INTERFACE=NO
 done
 
 for framework in ScannerKit DocumentScannerKit IDScanner; do
